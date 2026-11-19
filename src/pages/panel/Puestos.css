@@ -1,0 +1,26 @@
+.p-puestos-resumen { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.p-puestos-grilla {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 8px;
+}
+.p-puesto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px;
+  border-radius: 10px;
+  border: 2px solid;
+  font-size: 0.9rem;
+  min-height: 56px;
+  color: #2b173b;
+}
+.p-puesto small { font-size: 0.68rem; }
+.p-puesto.libre { background: #d6f3e6; border-color: #2fb380; }
+.p-puesto.ocupado { background: #fbdcdc; border-color: #e24c4b; }
+.p-puesto.reservado { background: #ffe7a8; border-color: #d97706; }
+.p-puestos-resumen .p-puesto { flex-direction: row; min-height: 0; padding: 4px 12px; border-radius: 999px; }

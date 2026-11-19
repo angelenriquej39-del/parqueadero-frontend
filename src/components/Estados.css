@@ -1,0 +1,38 @@
+.estado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--p-texto-suave);
+}
+.estado p { margin: 0; }
+.estado-icono { font-size: 2rem; }
+.estado-cargando { flex-direction: row; gap: 12px; }
+.estado-error strong { color: var(--coral-alerta); }
+
+.estado-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--p-borde);
+  border-top-color: var(--ambar);
+  border-radius: 50%;
+  animation: estadoGiro 0.8s linear infinite;
+}
+@keyframes estadoGiro { to { transform: rotate(360deg); } }
+
+.esqueleto { display: flex; flex-direction: column; gap: 10px; padding: 8px 0; }
+.esqueleto-fila {
+  height: 44px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--p-borde) 25%, var(--p-fondo-suave) 50%, var(--p-borde) 75%);
+  background-size: 200% 100%;
+  animation: esqueletoBrillo 1.2s ease-in-out infinite;
+}
+@keyframes esqueletoBrillo { to { background-position: -200% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .estado-spinner, .esqueleto-fila { animation: none; }
+}

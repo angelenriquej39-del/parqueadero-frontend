@@ -1,0 +1,74 @@
+.campana { position: relative; }
+.campana-boton {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.campana-contador {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: var(--coral-alerta);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+.campana-panel {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  width: min(360px, calc(100vw - 24px));
+  max-height: 70vh;
+  overflow-y: auto;
+  background: var(--p-tarjeta);
+  color: var(--p-texto);
+  border: 1px solid var(--p-borde);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+}
+.campana-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--p-borde);
+}
+.campana-cabecera button {
+  background: none;
+  border: 0;
+  color: var(--ambar-oscuro);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.campana-panel ul { list-style: none; margin: 0; padding: 0; }
+.campana-vacio { padding: 20px; text-align: center; color: var(--p-texto-suave); margin: 0; }
+.campana-item {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border: 0;
+  border-bottom: 1px solid var(--p-borde);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.campana-item.nueva { background: var(--p-resalte); }
+.campana-texto { display: flex; flex-direction: column; gap: 2px; font-size: 0.88rem; }
+.campana-texto small { color: var(--p-texto-suave); }
