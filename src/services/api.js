@@ -57,3 +57,10 @@ export async function descargarArchivo(ruta, params, nombreSugerido) {
 
 export default api;
 export { API_URL };
+
+// Desenvuelve las respuestas del backend: {ok, message, data} pasa a ser solo data.
+api.interceptors.response.use(function (respuesta) {
+  var c = respuesta.data;
+  if (c !== null) { if (typeof c === 'object') { if ('ok' in c) { if ('data' in c) { respuesta.data = c.data; } } } }
+  return respuesta;
+});
